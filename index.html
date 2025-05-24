@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast Application</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="weather-background"></div>
+    <div class="container">
+      <header>
+        <h1>Weather Forecast</h1>
+        <div class="search-container">
+          <input type="text" id="city-input" placeholder="Enter city name..." />
+          <button id="search-btn"><i class="fas fa-search"></i></button>
+          <button id="location-btn">
+            <i class="fas fa-location-arrow"></i>
+          </button>
+        </div>
+        <div class="unit-toggle">
+          <button id="celsius-btn" class="active">°C</button>
+          <button id="fahrenheit-btn">°F</button>
+        </div>
+      </header>
+
+      <main>
+        <div class="current-weather">
+          <div class="weather-info">
+            <h2 id="current-city">Loading...</h2>
+            <div class="current-temp" id="current-temp">--°</div>
+            <div class="weather-desc" id="weather-desc">--</div>
+            <div class="weather-details">
+              <div>
+                <i class="fas fa-temperature-high"></i> Feels like:
+                <span id="feels-like">--°</span>
+              </div>
+              <div>
+                <i class="fas fa-tint"></i> Humidity:
+                <span id="humidity">--%</span>
+              </div>
+              <div>
+                <i class="fas fa-wind"></i> Wind: <span id="wind">-- km/h</span>
+              </div>
+              <div>
+                <i class="fas fa-compress-alt"></i> Pressure:
+                <span id="pressure">-- hPa</span>
+              </div>
+            </div>
+          </div>
+          <div class="weather-icon">
+            <img
+              id="weather-icon"
+              src="https://openweathermap.org/img/wn/01d@2x.png"
+              alt="Weather icon"
+            />
+          </div>
+        </div>
+
+        <div class="weather-alerts" id="weather-alerts">
+          <h3><i class="fas fa-exclamation-triangle"></i> Weather Alerts</h3>
+          <div class="alerts-container" id="alerts-container">
+            <p>No active alerts for your location.</p>
+          </div>
+        </div>
+
+        <div class="hourly-forecast">
+          <h3>Hourly Forecast</h3>
+          <div class="hourly-container" id="hourly-container">
+            <!-- Hourly forecast items will be inserted here -->
+          </div>
+        </div>
+
+        <div class="daily-forecast">
+          <h3>5-Day Forecast</h3>
+          <div class="daily-container" id="daily-container">
+            <!-- Daily forecast items will be inserted here -->
+          </div>
+        </div>
+
+        <div class="charts-container">
+          <div class="chart-box">
+            <h3>Temperature Trend</h3>
+            <canvas id="temp-chart"></canvas>
+          </div>
+          <div class="chart-box">
+            <h3>Precipitation Probability</h3>
+            <canvas id="precip-chart"></canvas>
+          </div>
+        </div>
+
+        <div class="historical-data">
+          <h3>Historical Weather Data</h3>
+          <div class="historical-controls">
+            <input type="date" id="history-date" max="" />
+            <button id="get-history-btn">Get Historical Data</button>
+          </div>
+          <div class="historical-results" id="historical-results">
+            <p>Select a date to view historical weather data.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          Weather data provided by
+          <a href="https://openweathermap.org/" target="_blank">OpenWeather</a>
+        </p>
+        <p>&copy; <span id="current-year"></span> Weather Forecast App</p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
