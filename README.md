@@ -27,6 +27,5 @@ You’ll need:
 - Internet connection (to fetch weather API data)
   
 ### Installation
-
-1. Clone the repository
+Clone the repository
 git clone https://github.com/Sapkotasumita/Weather-Forecast.git
